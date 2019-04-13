@@ -1,0 +1,63 @@
+
+.seat {
+    width: 30px;
+    height: 30px;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    float: left;
+    padding: 1px;
+    border: none;
+}
+
+.seat.taken {
+    width: 30px;
+    height: 30px;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    float: left;
+    padding: 1px;
+    opacity: 0.1;
+}
+
+.seat-a {
+  width: 100%;
+  height: 100%;
+  background: grey;
+  overflow: hidden;
+  border-style: solid;
+  border-width: thin;
+  position: relative;
+}
+
+.seat-a .seat-b {
+   position: absolute;
+   width: 75%;
+   height: 75%;
+   background: white;
+   bottom: 20%;
+   left: 20%;
+}
+
+
+.seat:hover{
+  opacity: 0.3;
+}
+
+.clear {
+    clear: both;
+}
+
+
+/*
+
+.seat:after {
+  background: rgba(255, 0, 0, 0.8);
+  opacity:0;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.seat:hover:after {
+  opacity: 1;
+}
+*/

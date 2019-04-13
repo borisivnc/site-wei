@@ -13,9 +13,19 @@
    </div>
    <div class="col-sm-2">
      <ul class="nav navbar-nav navbar-right ">
-
+      <?php
+      if(isset($_SESSION['id']))
+      {
+        echo '<li>';
+        echo '<a href="#" data-toggle="popover" data-placement="bottom" title="' . strtoupper($_SESSION['surname']) . ' ' . strtoupper($_SESSION['name']) . '" data-content="<a href=\'session_destroy.php?comeback=index.php\'>Se deconnecter</a>">';
+        echo '<img src="ressources/images/login.png" class="connexion-logo">';
+        echo '</a>';
+        echo '</li>';
+      }
+      else {
+        ?>
        <li><a href="/connexion"><img src="ressources/images/login.png" class="connexion-logo"></a></li>
-
+     <?php } ?>
      </ul>
    </div>
    </div>

@@ -15,20 +15,20 @@ body, html {
 #wrapper {
 	min-height: 100%;
 	position: relative;
-	
+
 }
 
 /* #main { */
-	
+
 	/* overflow: auto; */
 	/* padding-bottom: 60px; */
-	
+
 /* } */
 
 
 
 #footer{
-		
+
 	/* background-color : black; */
 	position: absolute;
 	/* height: 40px; */
@@ -45,26 +45,26 @@ margin-top: -216px;
     font-weight: normal;
     font-style: normal;
 	color:  #000000;
-	
+
 }
 
 
 .navbar-inverse {
     min-height: 45px;
     height: 35px;
-    
+
 	 padding:0;
     margin:0;
  }
- 
+
 .navbar-default{
 	padding:0;
     margin:0;
-	
+
 	height: 100px;
-	
+
 	background-color : #FFFFFF;
-	
+
 }
 
 nav ul li {
@@ -77,16 +77,16 @@ text-align: center;
 
 .logo-starwei {
 	padding-top: 15px;
-	height: 65px;
+	height: 60px;
 	margin-top: -10px;
-	
-	
-}			
+
+
+}
 
 
 .lien-navbar {
 	padding-top: 35px;
-	margin-left : 15px; 
+	margin-left : 15px;
 	height: 70px;
 	font-family: 'star_jediregular';
 	line-height: 48px;
@@ -94,10 +94,10 @@ text-align: center;
 	color : #000000 !important;
 	font-size:23px;
 	/* width: 50%; */
-}	
+}
 
 .lien-navbar:hover {
-	
+
 	opacity : 0.6;
 }
 
@@ -105,17 +105,17 @@ text-align: center;
 
 .connexion-logo {
 	padding-bottom: 5px;
-	margin-right : 30px;	
+	margin-right : 30px;
 	margin-left: 20px;
 	margin-top: 20px;
 	height: 35px;
-	
+
 }
 
 .connexion-logo:hover {
-	
+
 	opacity : 0.6;
-	background-color: #FFFFFF; 
+	background-color: #FFFFFF;
 }
 
 
@@ -141,16 +141,16 @@ text-align: center;
 h3,h4 {
   color: white;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
- 
+
 }
 
 .footer-text {
-	
+
 	color: white;
 }
 
 .footer-text:hover {
-	
+
 	color: white;
 }
 
@@ -164,13 +164,26 @@ h3,h4 {
   .carousel-inner > .item > a > img {
     width: 100%;
     margin: auto;
-	
+
   }
 
-  
-  
+
+
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   .prev, .next,.text {font-size: 11px}
 }
 
+.popover.bottom .arrow {visibility:hidden;}
+
+			.popover {
+				border-radius: 0px;
+				top: 70px !important;
+				box-sizing: content-box !important;
+				white-space: nowrap;
+			}
+
+			.popover-title {
+				color: black;
+				text-align: left;
+			}
