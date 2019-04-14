@@ -35,7 +35,7 @@
               'surname' => $surname,
               'email' => $email,
               'password' => $pwd
-              ));
+            ));
         }
 
 
@@ -60,6 +60,30 @@
             $result->closeCursor();
         }
 
+
+  			public function printMessages($user_1_id, $user_2_id)
+    		{
+      			$result = $this->db->prepare('SELECT * FROM messages WHERE (sender_id=? and recipient_id=?) or (sender_id=? and recipient_id=?)');
+      			$result->execute(array($user_1_id, $user_2_id, $user_2_id, $user_1_id));
+
+
+      			while ($data = $result->fetch())
+      			{
+      				echo $data['message'] . ' <br />';
+      			}
+
+      			$result->closeCursor();
+    		}
+
+    		public function WriteMessage($message,$sender_id,$recipient_id)
+    		{
+      			$req = $this->db->prepare('INSERT INTO messages(message, sender_id, recipient_id) VALUES(:message, :sender_id, :recipient_id)');
+      			$req->execute(array(
+      			  'message' => $message,
+      			  'sender_id' => $sender_id,
+      			  'recipient_id' => $recipient_id
+      			  ));
+    		}
     }
 
 ?>

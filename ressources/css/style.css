@@ -12,6 +12,16 @@ body, html {
 	padding:0;
 }
 
+a {
+
+	text-decoration: none !important;
+}
+
+ul
+{
+	list-style-type: none !important;
+}
+
 #wrapper {
 	min-height: 100%;
 	position: relative;
@@ -176,14 +186,66 @@ h3,h4 {
 
 .popover.bottom .arrow {visibility:hidden;}
 
-			.popover {
-				border-radius: 0px;
-				top: 70px !important;
-				box-sizing: content-box !important;
-				white-space: nowrap;
-			}
+.popover {
+	border-radius: 0px;
+	top: 70px !important;
+	box-sizing: content-box !important;
+	white-space: nowrap;
+}
 
-			.popover-title {
-				color: black;
-				text-align: left;
-			}
+.popover-title {
+	color: black;
+	text-align: left;
+}
+
+.panel-box {
+	white-space: nowrap;
+	box-sizing: content-box !important;
+}
+
+.panel-box h4 {
+	color: black;
+	text-align: left;
+}
+
+.messages-box {
+	display: flex;
+	width: 100% !important;
+}
+
+.messages-box-friends {
+	border-style: solid;
+	border-right-style: none;
+	border-width: thin;
+	align-items: stretch;
+	width: 20% !important;
+}
+
+.messages {
+	border-style: solid;
+	border-width: thin;
+	align-items: stretch;
+	padding: 20px;
+	width: 80% !important;
+}
+
+.messages-box-button {
+	background-color: white;
+	color: black;
+}
+
+.messages-box-button:hover {
+	color: #3d3c3c;
+}
+
+.messages-box-button.active {
+	color: blue;
+}
+
+#message-input {
+	width: 90% !important;
+}
+
+#message-submit {
+	width: 9% !important;
+}

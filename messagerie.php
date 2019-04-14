@@ -17,50 +17,113 @@
 <div class="container">
 
 <br>
-  <?php 
-  
+  <?php
+
 	if (isset($_SESSION['id'])){
-	
-	require('Database.php');
-	
-	$db = new Database();
-	
-	
-	if (isset($_POST['message'])){
-		
-		$db->WriteMessage($_POST['message'],$_SESSION['id'],2);
-	
-	}
-	
-	
-	
-	$db->printMessages($_SESSION['id'],2);	
-	
+
+    	require('includes/db/AccountManager.php');
+
+    	$am = new AccountManager();
+      $db = new Database();
+
+      $q = $db->prepare('SELECT * FROM users WHERE id!=?');
+      $q->execute([$_SESSION['id']]);
+
+      echo '<br />';
+      echo '<br />';
+      echo '<br />';
+
+      echo '<div class="messages-box">';
+      echo '<div class="messages-box-friends col-sm-2">';
+      echo '<ul>';
+
+      while($data = $q->fetch())
+      {
+          if(isset($_GET['id']))
+          {
+            if($_GET['id'] == $data['id'])
+            {
+              echo '<li>';
+              echo '<a href="messagerie.php?id=' . $data['id'] .'" class="messages-box-button active">';
+              echo '<h5>';
+              echo $data['surname'] . ' ' . $data['name'];
+              echo '</h5>';
+              echo'</a>';
+              echo '</li>';
+            }
+
+            else
+            {
+              echo '<li>';
+              echo '<a href="messagerie.php?id=' . $data['id'] .'" class="messages-box-button">';
+              echo '<h5>';
+              echo $data['surname'] . ' ' . $data['name'];
+              echo '</h5>';
+              echo'</a>';
+              echo '</li>';
+            }
+
+          }
+
+          else
+          {
+            echo '<li>';
+            echo '<a href="messagerie.php?id=' . $data['id'] .'" class="messages-box-button">';
+            echo '<h5>';
+            echo $data['surname'] . ' ' . $data['name'];
+            echo '</h5>';
+            echo'</a>';
+            echo '</li>';
+          }
+
+      }
+
+      echo '</ul>';
+      echo '</div>';
+
+      echo '<div class="messages col-sm-8">';
+
+
+      if(isset($_GET['id'])){
+
+          $am->printMessages($_SESSION['id'], $_GET['id']);
+
+          echo '<br/><br/><br/>';
+          echo '<br/><br/><br/>';
+
+          $url = $_SERVER['PHP_SELF'] . '?id=' . $_GET['id'];
   ?>
-  
+
   <br>
-	<form action="messagerie.php" method="post">
-		<label for="msg"><b>Message</b></label>
-		<input type= "text" name="message" placeholder="Type message.."/>
-		<input type="submit" value = "Submit" />
 
-			<br>
+	<form action=<?=$url?> method="post">
+		<input type= "text" id="message-input" name="message" placeholder="Type message.."/>
+		<input type="submit" id="message-submit" value = "Submit" />
 	</form>
-  
+
+<?php
+
+          echo '</div>';
+          echo '</div>';
+          echo '<br/><br/><br/>';
+          echo '<br/><br/><br/>';
+      }
+?>
+
 
 </div>
 
 </div>
 
-	<?php }
-		
+	<?php
+
+  }
+
 	else {
-		
+
 		header('location: login.php');
-		
+
 	}
-
-
 
 	?>
 

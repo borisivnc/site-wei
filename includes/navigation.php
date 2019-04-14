@@ -13,7 +13,7 @@
    </div>
    <div class="col-sm-2">
      <ul class="nav navbar-nav navbar-right ">
-       
+
        <?php
 
          // If the user is connected
@@ -36,7 +36,7 @@
 
              echo 'data-content="';
 
-             echo '<a>Mon compte</a><br />';
+             echo '<a href=\'panel.php\'>Mon compte</a><br />';
              echo '<a href=\'session_destroy.php?comeback=index.php\'>Se deconnecter</a>';
 
              echo '">';

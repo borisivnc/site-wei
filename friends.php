@@ -23,6 +23,7 @@
         echo '<br />';
 
         require('includes/db/Database.php');
+				
         $db = new Database();
         $q = $db->prepare('SELECT * FROM users WHERE id!=?');
         $q->execute([$_SESSION['id']]);
