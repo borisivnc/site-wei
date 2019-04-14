@@ -7,16 +7,21 @@
 </head>
 <body>
 
+<div id="wrapper">
 <?php include("includes/social-media.php");?>
 <?php include("includes/navigation.php");?>
 
-<div class="container" id="main-content">
+<div class="container">
 
 
 
 </div>
+</div>
+
+<div id="footer">
 
 <?php include("includes/footer.php");?>
 
+</div>
 </body>
 </html>
