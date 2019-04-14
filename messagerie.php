@@ -108,6 +108,13 @@
           echo '<br/><br/><br/>';
           echo '<br/><br/><br/>';
       }
+
+      else {
+        echo '</div>';
+        echo '</div>';
+        echo '<br/><br/><br/>';
+        echo '<br/><br/><br/>';
+      }
 ?>
 
 
