@@ -84,7 +84,12 @@
       echo '<div class="messages col-sm-8">';
 
 
-      if(isset($_GET['id'])){
+      if(isset($_GET['id']))
+      {
+          if(isset($_POST['message']))
+          {
+              $am->WriteMessage($_POST['message'], $_SESSION['id'], $_GET['id']);
+          }
 
           $am->printMessages($_SESSION['id'], $_GET['id']);
 
