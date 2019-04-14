@@ -13,19 +13,52 @@
    </div>
    <div class="col-sm-2">
      <ul class="nav navbar-nav navbar-right ">
-      <?php
-      if(isset($_SESSION['id']))
-      {
-        echo '<li>';
-        echo '<a href="#" data-toggle="popover" data-placement="bottom" title="' . strtoupper($_SESSION['surname']) . ' ' . strtoupper($_SESSION['name']) . '" data-content="<a href=\'session_destroy.php?comeback=index.php\'>Se deconnecter</a>">';
-        echo '<img src="ressources/images/login.png" class="connexion-logo">';
-        echo '</a>';
-        echo '</li>';
-      }
-      else {
-        ?>
-       <li><a href="/connexion"><img src="ressources/images/login.png" class="connexion-logo"></a></li>
-     <?php } ?>
+       
+       <?php
+
+         // If the user is connected
+
+         if(isset($_SESSION['id']))
+         {
+             // A popover is created
+
+             echo '<li>';
+
+             //-- Placement
+
+             echo '<a href="#" data-toggle="popover" data-placement="bottom"';
+
+             //-- Title
+
+             echo 'title="' . strtoupper($_SESSION['surname']) . ' ' . strtoupper($_SESSION['name']) . '"';
+
+             //-- Content
+
+             echo 'data-content="';
+
+             echo '<a>Mon compte</a><br />';
+             echo '<a href=\'session_destroy.php?comeback=index.php\'>Se deconnecter</a>';
+
+             echo '">';
+
+             //-- Image
+
+             echo '<img src="ressources/images/login.png" class="connexion-logo">';
+
+             echo '</a>';
+             echo '</li>';
+         }
+
+         else // If the user is not connected
+         {
+           //We put up a link to the login page
+           ?>
+           <li><a href="/connexion"><img src="ressources/images/login.png" class="connexion-logo"></a></li>
+
+        <?php
+         }
+         ?>
+
      </ul>
    </div>
    </div>
